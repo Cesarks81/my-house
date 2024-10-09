@@ -13,6 +13,7 @@ public class Picture
 {
     private Square wall;
     private Square window;
+    private Square suelo;
     private Triangle roof;
     private Circle sun;
     private Circle moon;
@@ -47,19 +48,28 @@ public class Picture
         roof.moveHorizontal(20);
         roof.moveVertical(-60);
         roof.makeVisible();
-
+        
+        suelo = new Square();
+        suelo.makeVisible();
+        suelo.changeColor("green");
+        suelo.moveHorizontal(-310);
+        suelo.moveVertical(130);
+        suelo.changeSize(500);
+        
         sun = new Circle();
-        sun.changeColor("yellow");
-        sun.moveHorizontal(100);
-        sun.moveVertical(-40);
         sun.changeSize(80);
+        sun.changeColor("yellow");
+        sun.moveHorizontal(150);
+        sun.moveVertical(-100);
         sun.makeVisible();
+        sun.slowMoveVertical(70);
         
         moon = new Circle();
-        moon.makeVisible();
-        moon.changeColor("magenta");
-        moon.moveHorizontal(-150);
         moon.changeSize(50);
+        moon.changeColor("magenta");
+        moon.moveHorizontal(-250);
+        moon.makeVisible();
+        moon.slowMoveHorizontal(50);
     }
 
     /**
